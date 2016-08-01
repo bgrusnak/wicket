@@ -1,0 +1,13 @@
+{application, 'wicket',
+ [{description,
+   "The Unified Erlang SMS gateway library"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications,
+   [kernel,
+    stdlib,
+	inets
+   ]},
+  {env,[]},
+  {mod, {wicket_app, []}}
+]}.

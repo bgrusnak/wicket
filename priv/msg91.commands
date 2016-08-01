@@ -1,0 +1,55 @@
+{host, "https://control.msg91.com/api"}.
+
+{send, [
+	{method, get},
+	{return, flat},
+	{uri, "sendhttp.php"},
+	{params, [
+		{authname, "authkey", mandatory},
+		{number, "mobiles", mandatory},
+		{message, "message",mandatory},
+		{sender, "sender",mandatory},
+		{route, "route",mandatory, 4},
+		{country, "country",nonmandatory, 0},
+		{flash, "flash",nonmandatory, 0},
+		{ignoreNdnc, "ignoreNdnc",nonmandatory, 1},
+		{schedule, "schtime",nonmandatory, 0},
+		{response, "response",nonmandatory, "json"},
+		{campaign, "campaign",nonmandatory}
+]}]}.
+
+{balance, [
+	{method, get},
+	{return, flat},
+	{uri, "balance.php"},
+	{params, [
+		{authname, "authkey", mandatory},
+		{type, "type",mandatory, 4}
+]}]}.
+
+{changepassword, [
+	{method, get},
+	{return, flat},
+	{uri, "password.php"},
+	{params, [
+		{authname, "authkey", mandatory},
+		{oldpassword, "password",mandatory},
+		{newpassword, "newpass",mandatory},
+		{newpassword, "new_pass",mandatory}
+]}]}.
+
+{validation, [
+	{method, get},
+	{return, flat},
+	{uri, "validate.php"},
+	{params, [
+		{authname, "authkey", mandatory}
+]}]}.
+
+{optout, [
+	{method, get},
+	{return, flat},
+	{uri, "optout.php"},
+	{params, [
+		{authname, "authkey", mandatory}
+]}]}.
